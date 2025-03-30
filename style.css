@@ -1,85 +1,209 @@
+/* Enhanced Manadir Styling */
+:root {
+    --primary-dark: #1a1e25;
+    --primary-teal: #5fe0b3;
+    --primary-gold: #e8d5a0;
+    --gradient-start: #5fe0b3;
+    --gradient-end: #e8d5a0;
+    --text-dark: #1a1e25;
+    --text-light: #f4f4f8;
+    --section-bg: rgba(26, 30, 37, 0.9);
+    --card-bg: rgba(255, 255, 255, 0.05);
+}
+
 /* Basic Reset & Body Styling */
 body {
     margin: 0;
-    font-family: 'Lato', sans-serif; /* Uses Lato from Google Fonts, fallback to sans-serif */
+    font-family: 'Lato', sans-serif;
     line-height: 1.6;
-    color: #333; /* Dark grey text */
-    background-color: #f4f4f4; /* Light grey background fallback */
-
-    /* --- BACKGROUND IMAGE --- */
-    /* Replace 'background.jpg' with your image file or a URL */
-    background-image: url('background.jpg');
-    background-size: cover; /* Cover the entire page */
-    background-position: center center; /* Center the image */
-    background-attachment: fixed; /* Keep background fixed during scroll */
-    background-repeat: no-repeat;
+    color: var(--text-light);
+    overflow-x: hidden;
+    
+    /* Premium dark gradient background */
+    background: linear-gradient(135deg, #1a1e25 0%, #2d343c 100%);
+    
+    /* Add subtle pattern overlay */
+    background-image: 
+        linear-gradient(135deg, rgba(26, 30, 37, 0.97) 0%, rgba(45, 52, 60, 0.97) 100%),
+        url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+CjxyZWN0IHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgZmlsbD0idHJhbnNwYXJlbnQiPjwvcmVjdD4KPHBhdGggZD0iTTAgMCBMNjAgNjAgTTYwIDAgTDAgNjAiIHN0cm9rZT0icmdiYSg5NSwgMjI0LCAxNzksIDAuMDMpIiBzdHJva2Utd2lkdGg9IjAuNSI+PC9wYXRoPgo8L3N2Zz4=');
 }
 
-/* Container for content with semi-transparent background */
+/* Modern container styling */
 header, main, footer {
-    max-width: 800px; /* Max width for readability */
-    margin: 20px auto; /* Center the content blocks */
-    padding: 25px 40px;
-    background-color: rgba(255, 255, 255, 0.9); /* White background, slightly transparent */
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Subtle shadow */
-    border-radius: 8px; /* Slightly rounded corners */
+    max-width: 1000px;
+    margin: 40px auto;
+    position: relative;
 }
 
+/* Header with accent border */
 header {
     text-align: center;
-    border-bottom: 1px solid #eee;
-    margin-bottom: 30px;
-    background-color: rgba(255, 255, 255, 0.95); /* Make header slightly less transparent */
+    padding: 40px 40px 30px;
+    position: relative;
+    border-radius: 12px;
+    background: var(--section-bg);
+    border-left: 4px solid var(--primary-teal);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
+
+/* Decorative header element */
+header::before {
+    content: "";
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    width: 200px;
+    height: 200px;
+    background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+    opacity: 0.15;
+    border-radius: 50%;
+    z-index: 0;
 }
 
 #logo {
-    max-width: 150px; /* Adjust logo size as needed */
+    max-width: 120px;
     height: auto;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 1;
+    filter: drop-shadow(0 5px 10px rgba(0, 0, 0, 0.2));
 }
 
 h1 {
-    color: #1a1a1a; /* Slightly darker heading */
-    margin-bottom: 5px;
+    color: var(--primary-gold);
+    margin-bottom: 15px;
+    font-size: 3rem;
+    letter-spacing: 1px;
+    font-weight: 700;
+    position: relative;
+    z-index: 1;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
 }
 
 .tagline {
-    font-size: 1.1em;
-    color: #555;
+    font-size: 1.1rem;
+    color: var(--text-light);
     font-weight: 300;
     margin-top: 0;
+    max-width: 80%;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
 }
 
-h2 {
-    color: #0056b3; /* A blue color for section titles */
-    border-bottom: 2px solid #e0e0e0;
-    padding-bottom: 5px;
-    margin-top: 40px; /* Space between sections */
-    margin-bottom: 20px;
+/* Main content */
+main {
+    padding: 0;
+    background: transparent;
+    box-shadow: none;
 }
 
 section {
+    margin-bottom: 40px;
+    padding: 40px;
+    border-radius: 12px;
+    background: var(--section-bg);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+}
+
+/* Section accent elements */
+section::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, var(--gradient-start), var(--gradient-end));
+}
+
+h2 {
+    color: var(--primary-teal);
+    border-bottom: none;
+    padding-bottom: 10px;
+    margin-top: 0;
     margin-bottom: 30px;
+    font-size: 1.8rem;
+    position: relative;
+    display: inline-block;
+}
+
+h2::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 40px;
+    height: 3px;
+    background: linear-gradient(90deg, var(--gradient-start), var(--gradient-end));
 }
 
 /* Style the expertise list */
 #expertise ul {
-    list-style: none; /* Remove default bullets */
+    list-style: none;
     padding-left: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 15px;
 }
 
 #expertise li {
-    background-color: #e7f0f7; /* Light blue background for list items */
-    margin-bottom: 8px;
-    padding: 10px 15px;
-    border-radius: 4px;
-    border-left: 4px solid #0056b3; /* Blue accent border */
+    background: var(--card-bg);
+    padding: 20px;
+    border-radius: 8px;
+    border-left: 3px solid var(--primary-teal);
+    backdrop-filter: blur(5px);
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+#expertise li:hover {
+    border-left-color: var(--primary-gold);
+    transform: translateX(5px);
+    background: rgba(255, 255, 255, 0.1);
 }
 
 /* Style the team section */
 #team p {
-    font-size: 1.1em;
-    margin-bottom: 5px;
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+    transition: transform 0.3s ease;
+}
+
+#team a {
+    color: var(--primary-teal);
+    text-decoration: none;
+    position: relative;
+    padding: 5px 0;
+    transition: color 0.3s ease;
+}
+
+#team a:hover {
+    color: var(--primary-gold);
+}
+
+#team a::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--gradient-start), var(--gradient-end));
+    transition: width 0.3s ease;
+}
+
+#team a:hover::after {
+    width: 100%;
 }
 
 /* Style the contact section */
@@ -89,46 +213,110 @@ section {
 
 .contact-button {
     display: inline-block;
-    background-color: #007bff; /* Bootstrap blue */
-    color: #ffffff;
-    padding: 12px 25px;
+    background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+    color: var(--text-dark);
+    padding: 12px 30px;
     text-decoration: none;
-    border-radius: 5px;
-    font-weight: bold;
-    transition: background-color 0.3s ease;
-    margin-top: 15px;
+    border-radius: 50px;
+    font-weight: 700;
+    margin-top: 20px;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(95, 224, 179, 0.3);
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.contact-button::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, var(--gradient-end), var(--gradient-start));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: -1;
 }
 
 .contact-button:hover {
-    background-color: #0056b3; /* Darker blue on hover */
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(95, 224, 179, 0.4);
+}
+
+.contact-button:hover::before {
+    opacity: 1;
 }
 
 /* Footer Styling */
 footer {
     text-align: center;
-    margin-top: 40px;
-    padding: 15px;
-    font-size: 0.9em;
-    color: #666;
-    background-color: rgba(240, 240, 240, 0.85); /* Slightly different footer background */
+    padding: 30px;
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.6);
+    background: var(--section-bg);
+    border-radius: 12px;
+    position: relative;
 }
 
-/* Basic responsiveness for smaller screens */
-@media (max-width: 600px) {
-    header, main, footer {
-        padding: 20px 25px;
-        margin: 10px auto;
-    }
+/* Animated background element for footer */
+footer::before {
+    content: "";
+    position: absolute;
+    width: 150%;
+    height: 100px;
+    background: linear-gradient(90deg, transparent, rgba(95, 224, 179, 0.1), transparent);
+    top: -50px;
+    left: -25%;
+    transform: rotate(-5deg);
+}
 
+/* Basic responsiveness */
+@media (max-width: 768px) {
+    header, section, footer {
+        padding: 30px;
+        margin: 20px;
+    }
+    
     h1 {
-        font-size: 1.8em;
+        font-size: 2.2rem;
     }
-
-    h2 {
-        font-size: 1.4em;
+    
+    #expertise ul {
+        grid-template-columns: 1fr;
     }
-
-    #logo {
-        max-width: 120px;
+    
+    .tagline {
+        max-width: 100%;
     }
 }
+
+/* Extra small screens */
+@media (max-width: 480px) {
+    header, section, footer {
+        padding: 25px 20px;
+        margin: 15px;
+    }
+    
+    h1 {
+        font-size: 1.8rem;
+    }
+    
+    #logo {
+        max-width: 100px;
+    }
+}
+
+/* Add subtle animation to all sections */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+section {
+    animation: fadeIn 0.6s ease forwards;
+}
+
+section:nth-child(2) { animation-delay: 0.1s; }
+section:nth-child(3) { animation-delay: 0.2s; }
