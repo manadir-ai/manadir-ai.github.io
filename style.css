@@ -1,0 +1,134 @@
+/* Basic Reset & Body Styling */
+body {
+    margin: 0;
+    font-family: 'Lato', sans-serif; /* Uses Lato from Google Fonts, fallback to sans-serif */
+    line-height: 1.6;
+    color: #333; /* Dark grey text */
+    background-color: #f4f4f4; /* Light grey background fallback */
+
+    /* --- BACKGROUND IMAGE --- */
+    /* Replace 'background.jpg' with your image file or a URL */
+    background-image: url('background.jpg');
+    background-size: cover; /* Cover the entire page */
+    background-position: center center; /* Center the image */
+    background-attachment: fixed; /* Keep background fixed during scroll */
+    background-repeat: no-repeat;
+}
+
+/* Container for content with semi-transparent background */
+header, main, footer {
+    max-width: 800px; /* Max width for readability */
+    margin: 20px auto; /* Center the content blocks */
+    padding: 25px 40px;
+    background-color: rgba(255, 255, 255, 0.9); /* White background, slightly transparent */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Subtle shadow */
+    border-radius: 8px; /* Slightly rounded corners */
+}
+
+header {
+    text-align: center;
+    border-bottom: 1px solid #eee;
+    margin-bottom: 30px;
+    background-color: rgba(255, 255, 255, 0.95); /* Make header slightly less transparent */
+}
+
+#logo {
+    max-width: 150px; /* Adjust logo size as needed */
+    height: auto;
+    margin-bottom: 10px;
+}
+
+h1 {
+    color: #1a1a1a; /* Slightly darker heading */
+    margin-bottom: 5px;
+}
+
+.tagline {
+    font-size: 1.1em;
+    color: #555;
+    font-weight: 300;
+    margin-top: 0;
+}
+
+h2 {
+    color: #0056b3; /* A blue color for section titles */
+    border-bottom: 2px solid #e0e0e0;
+    padding-bottom: 5px;
+    margin-top: 40px; /* Space between sections */
+    margin-bottom: 20px;
+}
+
+section {
+    margin-bottom: 30px;
+}
+
+/* Style the expertise list */
+#expertise ul {
+    list-style: none; /* Remove default bullets */
+    padding-left: 0;
+}
+
+#expertise li {
+    background-color: #e7f0f7; /* Light blue background for list items */
+    margin-bottom: 8px;
+    padding: 10px 15px;
+    border-radius: 4px;
+    border-left: 4px solid #0056b3; /* Blue accent border */
+}
+
+/* Style the team section */
+#team p {
+    font-size: 1.1em;
+    margin-bottom: 5px;
+}
+
+/* Style the contact section */
+#contact {
+    text-align: center;
+}
+
+.contact-button {
+    display: inline-block;
+    background-color: #007bff; /* Bootstrap blue */
+    color: #ffffff;
+    padding: 12px 25px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    margin-top: 15px;
+}
+
+.contact-button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+/* Footer Styling */
+footer {
+    text-align: center;
+    margin-top: 40px;
+    padding: 15px;
+    font-size: 0.9em;
+    color: #666;
+    background-color: rgba(240, 240, 240, 0.85); /* Slightly different footer background */
+}
+
+/* Basic responsiveness for smaller screens */
+@media (max-width: 600px) {
+    header, main, footer {
+        padding: 20px 25px;
+        margin: 10px auto;
+    }
+
+    h1 {
+        font-size: 1.8em;
+    }
+
+    h2 {
+        font-size: 1.4em;
+    }
+
+    #logo {
+        max-width: 120px;
+    }
+}
