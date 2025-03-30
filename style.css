@@ -1,14 +1,16 @@
-/* Enhanced Manadir Styling */
+/* Enhanced Manadir Styling - Light Theme */
 :root {
-    --primary-dark: #1a1e25;
     --primary-teal: #5fe0b3;
     --primary-gold: #e8d5a0;
+    --primary-blue: #4285F4;
     --gradient-start: #5fe0b3;
     --gradient-end: #e8d5a0;
-    --text-dark: #1a1e25;
-    --text-light: #f4f4f8;
-    --section-bg: rgba(26, 30, 37, 0.9);
-    --card-bg: rgba(255, 255, 255, 0.05);
+    --text-dark: #333333;
+    --text-medium: #555555;
+    --border-color: #e0e0e0;
+    --card-bg: #f8f9fa;
+    --highlight-bg: #eef5ff;
+    --section-divider: #f0f0f0;
 }
 
 /* Basic Reset & Body Styling */
@@ -16,307 +18,214 @@ body {
     margin: 0;
     font-family: 'Lato', sans-serif;
     line-height: 1.6;
-    color: var(--text-light);
-    overflow-x: hidden;
-    
-    /* Premium dark gradient background */
-    background: linear-gradient(135deg, #1a1e25 0%, #2d343c 100%);
-    
-    /* Add subtle pattern overlay */
-    background-image: 
-        linear-gradient(135deg, rgba(26, 30, 37, 0.97) 0%, rgba(45, 52, 60, 0.97) 100%),
-        url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+CjxyZWN0IHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgZmlsbD0idHJhbnNwYXJlbnQiPjwvcmVjdD4KPHBhdGggZD0iTTAgMCBMNjAgNjAgTTYwIDAgTDAgNjAiIHN0cm9rZT0icmdiYSg5NSwgMjI0LCAxNzksIDAuMDMpIiBzdHJva2Utd2lkdGg9IjAuNSI+PC9wYXRoPgo8L3N2Zz4=');
+    color: var(--text-dark);
+    background-color: #f5f5f5;
+    padding: 20px;
 }
 
-/* Modern container styling */
-header, main, footer {
-    max-width: 1000px;
-    margin: 40px auto;
-    position: relative;
-}
-
-/* Header with accent border */
-header {
-    text-align: center;
-    padding: 40px 40px 30px;
-    position: relative;
-    border-radius: 12px;
-    background: var(--section-bg);
-    border-left: 4px solid var(--primary-teal);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+/* Container styling */
+header, main section, footer {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
     overflow: hidden;
 }
 
-/* Decorative header element */
-header::before {
-    content: "";
-    position: absolute;
-    top: -10px;
-    right: -10px;
-    width: 200px;
-    height: 200px;
-    background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
-    opacity: 0.15;
-    border-radius: 50%;
-    z-index: 0;
+/* Header styling */
+header {
+    text-align: center;
+    padding: 30px 20px;
+    margin-bottom: 20px;
 }
 
 #logo {
-    max-width: 120px;
+    max-width: 100px;
     height: auto;
-    margin-bottom: 20px;
-    position: relative;
-    z-index: 1;
-    filter: drop-shadow(0 5px 10px rgba(0, 0, 0, 0.2));
+    margin-bottom: 15px;
 }
 
 h1 {
-    color: var(--primary-gold);
-    margin-bottom: 15px;
-    font-size: 3rem;
-    letter-spacing: 1px;
+    color: #1a1a1a;
+    margin: 10px 0;
+    font-size: 2.5rem;
     font-weight: 700;
-    position: relative;
-    z-index: 1;
-    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
 }
 
 .tagline {
     font-size: 1.1rem;
-    color: var(--text-light);
-    font-weight: 300;
-    margin-top: 0;
-    max-width: 80%;
-    margin: 0 auto;
-    position: relative;
-    z-index: 1;
+    color: var(--text-medium);
+    font-weight: 400;
+    margin: 0;
 }
 
 /* Main content */
 main {
-    padding: 0;
-    background: transparent;
-    box-shadow: none;
+    max-width: 900px;
+    margin: 0 auto;
 }
 
-section {
-    margin-bottom: 40px;
-    padding: 40px;
-    border-radius: 12px;
-    background: var(--section-bg);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-    position: relative;
-    overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-section:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
-}
-
-/* Section accent elements */
-section::before {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 4px;
-    background: linear-gradient(90deg, var(--gradient-start), var(--gradient-end));
+main section {
+    padding: 25px 30px;
+    margin-bottom: 20px;
 }
 
 h2 {
-    color: var(--primary-teal);
-    border-bottom: none;
+    color: var(--primary-blue);
+    border-bottom: 2px solid var(--section-divider);
     padding-bottom: 10px;
     margin-top: 0;
-    margin-bottom: 30px;
-    font-size: 1.8rem;
-    position: relative;
-    display: inline-block;
+    margin-bottom: 20px;
+    font-size: 1.6rem;
+    font-weight: 700;
 }
 
-h2::after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 40px;
-    height: 3px;
-    background: linear-gradient(90deg, var(--gradient-start), var(--gradient-end));
-}
-
-/* Style the expertise list */
+/* Areas of Expertise */
 #expertise ul {
     list-style: none;
     padding-left: 0;
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 15px;
+    margin: 0;
 }
 
 #expertise li {
-    background: var(--card-bg);
-    padding: 20px;
-    border-radius: 8px;
-    border-left: 3px solid var(--primary-teal);
-    backdrop-filter: blur(5px);
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    background-color: var(--highlight-bg);
+    margin-bottom: 10px;
+    padding: 15px;
+    border-radius: 4px;
+    border-left: 4px solid var(--primary-blue);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    display: flex;
+    align-items: center;
 }
 
 #expertise li:hover {
-    border-left-color: var(--primary-gold);
     transform: translateX(5px);
-    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-/* Style the team section */
+#expertise li i {
+    margin-right: 10px;
+    color: var(--primary-blue);
+    width: 20px;
+    text-align: center;
+}
+
+/* Team section */
 #team p {
-    font-size: 1.1rem;
-    margin-bottom: 15px;
-    transition: transform 0.3s ease;
+    margin: 15px 0;
 }
 
 #team a {
-    color: var(--primary-teal);
+    color: var(--primary-blue);
     text-decoration: none;
-    position: relative;
-    padding: 5px 0;
-    transition: color 0.3s ease;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    transition: color 0.2s ease;
 }
 
 #team a:hover {
-    color: var(--primary-gold);
+    color: #2a5db0;
 }
 
-#team a::after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background: linear-gradient(90deg, var(--gradient-start), var(--gradient-end));
-    transition: width 0.3s ease;
+#team a i {
+    margin-right: 10px;
+    color: #0077b5; /* LinkedIn blue */
 }
 
-#team a:hover::after {
-    width: 100%;
-}
-
-/* Style the contact section */
+/* Contact section */
 #contact {
     text-align: center;
+    padding-bottom: 40px;
 }
 
 .contact-button {
     display: inline-block;
-    background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
-    color: var(--text-dark);
+    background-color: var(--primary-blue);
+    color: white;
     padding: 12px 30px;
     text-decoration: none;
-    border-radius: 50px;
-    font-weight: 700;
-    margin-top: 20px;
-    transition: all 0.3s ease;
-    box-shadow: 0 5px 15px rgba(95, 224, 179, 0.3);
-    position: relative;
-    overflow: hidden;
-    z-index: 1;
-}
-
-.contact-button::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(135deg, var(--gradient-end), var(--gradient-start));
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    z-index: -1;
+    border-radius: 4px;
+    font-weight: 500;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+    margin-top: 15px;
 }
 
 .contact-button:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 25px rgba(95, 224, 179, 0.4);
+    background-color: #2a5db0;
+    transform: translateY(-2px);
 }
 
-.contact-button:hover::before {
-    opacity: 1;
+.contact-button i {
+    margin-right: 8px;
 }
 
 /* Footer Styling */
 footer {
     text-align: center;
-    padding: 30px;
+    padding: 20px;
+    color: var(--text-medium);
     font-size: 0.9rem;
-    color: rgba(255, 255, 255, 0.6);
-    background: var(--section-bg);
-    border-radius: 12px;
-    position: relative;
 }
 
-/* Animated background element for footer */
-footer::before {
-    content: "";
-    position: absolute;
-    width: 150%;
-    height: 100px;
-    background: linear-gradient(90deg, transparent, rgba(95, 224, 179, 0.1), transparent);
-    top: -50px;
-    left: -25%;
-    transform: rotate(-5deg);
-}
-
-/* Basic responsiveness */
+/* Responsive styling */
 @media (max-width: 768px) {
-    header, section, footer {
-        padding: 30px;
-        margin: 20px;
+    body {
+        padding: 15px;
     }
     
     h1 {
-        font-size: 2.2rem;
+        font-size: 2rem;
     }
     
-    #expertise ul {
-        grid-template-columns: 1fr;
-    }
-    
-    .tagline {
-        max-width: 100%;
+    main section {
+        padding: 20px;
     }
 }
 
-/* Extra small screens */
 @media (max-width: 480px) {
-    header, section, footer {
-        padding: 25px 20px;
-        margin: 15px;
+    body {
+        padding: 10px;
     }
     
     h1 {
         font-size: 1.8rem;
     }
     
+    .tagline {
+        font-size: 1rem;
+    }
+    
     #logo {
-        max-width: 100px;
+        max-width: 80px;
+    }
+    
+    main section {
+        padding: 15px;
     }
 }
 
-/* Add subtle animation to all sections */
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
+/* Container for better layout */
+.container {
+    max-width: 900px;
+    margin: 0 auto;
 }
 
-section {
-    animation: fadeIn 0.6s ease forwards;
+/* Custom section dividers */
+.section-divider {
+    height: 1px;
+    background: linear-gradient(to right, transparent, var(--section-divider), transparent);
+    margin: 20px 0;
 }
 
-section:nth-child(2) { animation-delay: 0.1s; }
-section:nth-child(3) { animation-delay: 0.2s; }
+/* Additional improvements */
+#expertise li:nth-child(1) { border-left-color: #4285F4; } /* Google Blue */
+#expertise li:nth-child(2) { border-left-color: #34A853; } /* Google Green */
+#expertise li:nth-child(3) { border-left-color: #FBBC05; } /* Google Yellow */
+#expertise li:nth-child(4) { border-left-color: #EA4335; } /* Google Red */
+#expertise li:nth-child(5) { border-left-color: #5fe0b3; } /* Your teal */
+
+/* Remove default link styling for the email button */
+a.contact-button {
+    text-decoration: none;
+}
